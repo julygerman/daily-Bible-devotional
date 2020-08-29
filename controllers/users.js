@@ -1,5 +1,5 @@
 const User = require('../models/user');
-
+const Bible = require('../models/bible')
 
 module.exports = {
   index,
