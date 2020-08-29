@@ -1,18 +1,6 @@
 const mongoose = require('mongoose')
 
-           
-
-const metaSchema = new mongoose.Schema({
-
-    fums: String,
-    fumsId: String,
-    fumsJsInclude: String,
-    fumsJs: String,
-    fumsNoScript: String
         
-})
-
-
 
 const bibleSchema = new mongoose.Schema({
     
@@ -23,7 +11,6 @@ const bibleSchema = new mongoose.Schema({
     reference: String,
     copyright: String,
     content: String,
-    metta: [{ type: Schema.Types.ObjectId, ref: 'Bible'}],
     next: {
     id: String,
     number: Number,
