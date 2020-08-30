@@ -4,25 +4,13 @@ const mongoose = require('mongoose')
 
 const bibleSchema = new mongoose.Schema({
     
-    id: String,
-    bibleId: String,
-    number: Number,
-    bookId: String,
-    reference: String,
-    copyright: String,
-    content: String,
-    next: {
-    id: String,
-    number: Number,
-    bookId: String
-    },
-    previous: {
-    id: String,
-    number: Number,
-    bookId: String
-    }
-},{
+    type: String,
+    version: String,
+    book_name: String,
+    book_nr: Number,
+    direction: String,
+}, {
     timestamps: true
-})
+})   
 
 module.exports = mongoose.model('Bible', bibleSchema)

@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const biblesCtrl = require('../controllers/bibles')
 
-router.get('/index', isLoggedIn,  biblesCtrl.index)
+router.get('/', isLoggedIn,  biblesCtrl.index)
 
 
 function isLoggedIn(req, res, next) {
