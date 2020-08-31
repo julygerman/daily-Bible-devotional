@@ -1,33 +1,31 @@
 <%- include('../partials/header') %>
 
 
-  <body class="index">
-    <header>
-      <div class="container">
-        <h1>
-          <a class="flex" href="/">
-            <span class="logo" title=''>DBD</span>
-            <span>Bible App</span>
-          </a>
-        </h1>
-      </div>
-    </header>
+
     <div class="subheader">
       <div class="container flex">
         <div class="subheadings">
           <h2>Select a Book</h2>
-          <%# bibles.forEach(bible =>{ %>
-
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th><p>Book:<%= bible.bible %> </</p></th>
-                        </tr>
-                    </thead> 
-                </table>
-            </div>
-            <%# }) %> 
+          <%# if(book){ %>
+            <%# book.forEach(bible =>{ %>
+              <div>
+                <div>
+                  <h2 id="chapter"><%#= bible.book_name %> </h2>
+                  <h3><%#= bible.book_nr %> </h3>
+                  <p><%#= bible.verse_nr %> <%#= bible.verse %> </p>
+                  <h4 id="verse"></h4>
+                  <p>...</p>
+                  <h4 id="chapter">one</h4>
+                  <p>...</p>
+                  <h4 id="verse">two</h4>
+                  <p>...</p>
+                  <h4 id="chapter">three</h4>
+                  <p>...</p>
+                </div>
+                </div>
+              </div>
+            <%# }) %>
+          <%# } %>
         </div>
       </div>
     </div>

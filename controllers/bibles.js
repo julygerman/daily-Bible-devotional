@@ -14,7 +14,8 @@ function index(req, res){
     axios
     .get('http://getbible.net/json?passage=genesis&version=asv')
     .then((response) =>{
-        console.log(response)
+        console.log(data)
+        res.render('bibles/index', {title: 'Bible Index', user: req.user ? req.user : null, results: response.data})
     })
 }
 
