@@ -15,23 +15,13 @@ function index(req, res){
 
 function show(req, res) {
     axios
-      .get(`http://getbible.net/json?passage=${book_name}`)
-      .then((response) => {
-        Bible.findOne({ book_name: response.data.book_name })
-          .then((bible) => {
-            if (bible) {
-              res.render("bibles/index", {
-                title: "Bibles Index",
-                user: req.user,
-                version: response.data,
-                book_name: response.data,
-                book_nr: '',
-                direction: '',
-              });
-            } 
-          });
-      });
-  }
+      .get(`http://getbible.net/json?passage=genesis`)
+      .then(response => {
+        console.log('hello', response.data.url);
+        console.log('there', response.data.explanation);
+      })
+         
+}
   
   function search(req, res) {
     axios
@@ -44,4 +34,4 @@ function show(req, res) {
           results: response.data.results
         })
       })
-  }
+}
