@@ -16,15 +16,18 @@
       <div class="container flex">
         <div class="subheadings">
           <h2>Select a Book</h2>
-          <div>
-              <table>
-                  <thead>
-                      <tr>
-                          <th><span>Book:</span></th>
-                      </tr>
-                  </thead> 
-              </table>
-          </div>
+          <%# bibles.forEach(bible =>{ %>
+
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><p>Book:<%= bible.bible %> </</p></th>
+                        </tr>
+                    </thead> 
+                </table>
+            </div>
+            <%# }) %> 
         </div>
       </div>
     </div>
