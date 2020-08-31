@@ -12,10 +12,10 @@ module.exports = {
 
 function index(req, res){
     axios
-    .get('http://getbible.net/json?passage=genesis&version=asv')
+    .get('https://raw.githubusercontent.com/aruljohn/Bible-kjv/master/1John.json')
     .then((response) =>{
-        console.log(data)
-        res.render('bibles/index', {title: 'Bible Index', user: req.user ? req.user : null, results: response.data})
+        console.log('this is your data', response.data)
+        res.render('bibles/index', {title: 'Daily Scriptures', user: req.user ? req.user : null, results: response.data})
     })
 }
 

@@ -5,27 +5,23 @@
     <div class="subheader">
       <div class="container flex">
         <div class="subheadings">
-          <h2>Select a Book</h2>
-          <%# if(book){ %>
-            <%# book.forEach(bible =>{ %>
-              <div>
-                <div>
-                  <h2 id="chapter"><%#= bible.book_name %> </h2>
-                  <h3><%#= bible.book_nr %> </h3>
-                  <p><%#= bible.verse_nr %> <%#= bible.verse %> </p>
-                  <h4 id="verse"></h4>
-                  <p>...</p>
-                  <h4 id="chapter">one</h4>
-                  <p>...</p>
-                  <h4 id="verse">two</h4>
-                  <p>...</p>
-                  <h4 id="chapter">three</h4>
-                  <p>...</p>
-                </div>
-                </div>
-              </div>
-            <%# }) %>
-          <%# } %>
+          <h2><%= title %> </h2>
+          <% if (results){%>
+            <Table>
+              <tr>
+                <h2><%=  results.book %></h2>
+                <!-- <h4><%#= results.chapters[0]chapter[0].text%> </h4> -->
+                <% results.chapters.forEach((chapter, idx) =>{ %>
+                  <h4>Chapter <%= idx + 1 %> </h4>
+                  <% chapter.verses.forEach((verse, id) => { %> 
+                      <p><%= id + 1 %>. <%= verse.text %></p>
+                      
+                   <% }); %> 
+                    
+                  <% }) %>
+              </tr>
+            </Table>
+         <% } %> 
         </div>
       </div>
     </div>
