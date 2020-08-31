@@ -4,34 +4,36 @@ const { response } = require('express')
 
 module.exports = {
     index,
-    show,
+    // show,
     // search,
 }
 
 
 
 function index(req, res){
-    Bible.find({}).then((bible) =>{
-        res.render('bibles/index', {title: 'Bibles', user: req.user, bible})
+    axios
+    .get('http://getbible.net/json?passage=genesis&version=asv')
+    .then((response) =>{
+        console.log(response)
     })
 }
 
-function show(req, res) {
-    axios
-      .get('http://getbible.net/json?passage=genesis&version=asv')
-      .then((bible) => {
-          console.log('hello world my name is francis')
-        if (bible) {
-          res.render("bibles/index", {
-            title: "Genesis",
-            user: req.user,
-            book: response.data,
-            chapter: bible.chapter,
-            bibleId: bible._id,
-          });
-        }
-    })
-}
+// function show(req, res) {
+//     axios
+//       .get('http://getbible.net/json?passage=genesis&version=asv')
+//       .then((bible) => {
+//           console.log('hello world my name is francis')
+//         if (bible) {
+//           res.render("bibles/index", {
+//             title: "Genesis",
+//             user: req.user,
+//             book: response.data,
+//             chapter: bible.chapter,
+//             bibleId: bible._id,
+//           });
+//         }
+//     })
+// }
   
 //   function search(req, res) {
 //     axios

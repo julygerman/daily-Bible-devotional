@@ -4,9 +4,14 @@ const mongoose = require('mongoose')
 
 const bibleSchema = new mongoose.Schema({
     
+    type: String,
     version: String,
-    bookName: String,
-    bookChapter: Number,
+    book_name: String,
+    book_nr: Number,
+    chapter_nr: Number,
+    chapter: String,
+    verse_nr: Number,
+    verse: String
 }, {
     timestamps: true
 })   
