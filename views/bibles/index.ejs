@@ -2,38 +2,72 @@
 
 
 
-<div class="subheader">
-  <div class="container flex">
-    <div class="subheadings">
-      
+
+<h2><%=  results.book %></h2>
+<nav id="navbar-example3" class="navbar navbar-light bg-light">
+  <nav class="nav nav-pills flex-column">
+    
+    <a class="nav-link" href="Genesis">Genesis</a>
+    <a class="nav-link" href="Exodus">Exodus</a>
+    <a class="nav-link" href="Leviticus">Leviticus</a>
+    <a class="nav-link" href="Numbers">Numbers</a>
+    <a class="nav-link" href="Deuteronomy">Deuteronomy</a>
+    <a class="nav-link" href="Joshua">Joshua</a>
+    <a class="nav-link" href="Judges">Judges</a>
+    <a class="nav-link" href="Ruth">Ruth</a>
+    <a class="nav-link" href="1Samuel">1Samuel</a>
+    <a class="nav-link" href="2Samuel">2 1KingsSamuel</a>
+    <a class="nav-link" href="1Kings">1 2KingsKings</a>
+    <a class="nav-link" href="2Kings">2 1 ChroniclesKings</a>
+    <a class="nav-link" href="1Chronicles">1 Chronicles</a>
+    <a class="nav-link" href="2Chronicles">2 EzraNehemiahChronicles</a>
+    <a class="nav-link" href="EzraNehemiah">EzraNehemiah</a>
+    <a class="nav-link" href="Nehemiah">Nehemiah</a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+    <a class="nav-link" href=""></a>
+  </nav>
+</nav>
+
+<div data-spy="scroll" data-target="#navbar-example3" data-offset="0"></div>
       <% if (results){%>
         <Table>
           <tr>
-            <h2><%=  results.book %></h2>
-            <!-- <h4><%#= results.chapters[0]chapter[0].text%> </h4> -->
-            <% results.chapters.forEach((chapter, idx) =>{ %>
-      <nav id="navbar-example3" class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">Books</a>
-            <nav class="nav nav-pills flex-column">
-              <a class="nav-link" href="#item-1"><%= results.book %> </a>
-              <nav class="nav nav-pills flex-column">
-                 
-                <a class="nav-link ml-3 my-1" href="#item-1-1"><%= idx + 1 %> </a>
-                <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
-              </nav>
-              <a class="nav-link" href="#item-2">Item 2</a>
-              <a class="nav-link" href="#item-3">Item 3</a>
-              <nav class="nav nav-pills flex-column">
-                <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
-                <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
-                <h2><%= title %> </h2>
-                        <h4>Chapter <%= idx + 1 %> </h4>
-                        <% chapter.verses.forEach((verse, id) => { %> 
-                            <p><%= id + 1 %>. <%= verse.text %></p>
-              </nav>
-            </nav>
-          </nav>
-                      
+      <% results.chapters.forEach((chapter, idx) =>{ %>
+        <h4 id="item-1"></h4>Chapter <%= idx + 1 %> </h4>
+        <% chapter.verses.forEach((verse, id) => { %> 
+            <p><%= id + 1 %>. <%= verse.text %></p>
+        </div>
+        
                    <% }); %> 
                     
                   <% }) %>
