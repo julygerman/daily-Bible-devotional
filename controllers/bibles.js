@@ -16,7 +16,7 @@ function index(req, res){
     .get('https://raw.githubusercontent.com/aruljohn/Bible-kjv/master/1John.json')
     .then((response) =>{
         console.log('this is your data', response.data)
-        res.render('bibles/index', {title: 'Daily Scriptures', user: req.user ? req.user : null, results: response.data})
+        res.render('bibles/index', {title: 'Daily Scriptures', user: req.user, results: response.data})
     })
 }
 
