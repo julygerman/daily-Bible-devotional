@@ -15,10 +15,6 @@
       <li class="nav-item">
         <a class="nav-link" id="friends-tab" data-toggle="tab" href="#friends" role="tab" aria-controls="friends" aria-selected="false">Friends</a>
       </li>
-      <!-- This is the info for the 'watchlist' tab -->
-      <li class="nav-item">
-        <a class="nav-link" id="prayerlist-tab" data-toggle="tab" href="" role="tab" aria-controls="prayerlist" aria-selected="false">Prayer List</a>
-      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="profileinfo" role="tabpanel" aria-labelledby="profileinfo-tab">
@@ -61,10 +57,6 @@
       <!-- This is the card for the 'prayerlist' tab -->
       <div class="tab-pane fade show" id="prayerlist" role="tabpanel" aria-labelledby="prayerlist-tab">
         <div class="card-body">
-        <!-- This is where we'll use a forEach to display prayerlist items -->
-        <% user.prayerList.forEach(p => { %>
-          <a href="#"><p><%= g.title %></p></a>
-        <% }) %> 
         </div>
       </div>
     </div>

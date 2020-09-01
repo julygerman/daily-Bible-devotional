@@ -1,0 +1,5 @@
+<body>
+    <h1>Prayer # <%= prayer.id %></h1>
+    <h3><%= prayer.prayer %></h3>
+    <h3>Answered:  <%= prayer.done ? 'Yes' : 'No'%></h3>
+    <a href="/prayers/<%= prayer.id%>">Edit Prayer</a>
