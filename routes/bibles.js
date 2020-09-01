@@ -2,6 +2,7 @@ const router = require('express').Router()
 const biblesCtrl = require('../controllers/bibles')
 
 router.get('/index', isLoggedIn,  biblesCtrl.index)
+router.get('/:id', isLoggedIn, biblesCtrl.show)
 // router.get('/:type', isLoggedIn, biblesCtrl.show)
 
 

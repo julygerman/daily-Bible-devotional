@@ -2,19 +2,37 @@
 
 
 
-    <div class="subheader">
-      <div class="container flex">
-        <div class="subheadings">
-          <h2><%= title %> </h2>
-          <% if (results){%>
-            <Table>
-              <tr>
-                <h2><%=  results.book %></h2>
-                <!-- <h4><%#= results.chapters[0]chapter[0].text%> </h4> -->
-                <% results.chapters.forEach((chapter, idx) =>{ %>
-                  <h4>Chapter <%= idx + 1 %> </h4>
-                  <% chapter.verses.forEach((verse, id) => { %> 
-                      <p><%= id + 1 %>. <%= verse.text %></p>
+<div class="subheader">
+  <div class="container flex">
+    <div class="subheadings">
+      
+      <% if (results){%>
+        <Table>
+          <tr>
+            <h2><%=  results.book %></h2>
+            <!-- <h4><%#= results.chapters[0]chapter[0].text%> </h4> -->
+            <% results.chapters.forEach((chapter, idx) =>{ %>
+      <nav id="navbar-example3" class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Books</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="#item-1"><%= results.book %> </a>
+              <nav class="nav nav-pills flex-column">
+                 
+                <a class="nav-link ml-3 my-1" href="#item-1-1"><%= idx + 1 %> </a>
+                <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+              </nav>
+              <a class="nav-link" href="#item-2">Item 2</a>
+              <a class="nav-link" href="#item-3">Item 3</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+                <h2><%= title %> </h2>
+                        <h4>Chapter <%= idx + 1 %> </h4>
+                        <% chapter.verses.forEach((verse, id) => { %> 
+                            <p><%= id + 1 %>. <%= verse.text %></p>
+              </nav>
+            </nav>
+          </nav>
                       
                    <% }); %> 
                     

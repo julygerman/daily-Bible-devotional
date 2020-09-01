@@ -1,10 +1,11 @@
 const Bible = require('../models/bible')
 const axios = require('axios')
 const { response } = require('express')
+const { request } = require('../server')
 
 module.exports = {
     index,
-    // show,
+    show,
     // search,
 }
 
@@ -19,22 +20,16 @@ function index(req, res){
     })
 }
 
-// function show(req, res) {
-//     axios
-//       .get('http://getbible.net/json?passage=genesis&version=asv')
-//       .then((bible) => {
-//           console.log('hello world my name is francis')
-//         if (bible) {
-//           res.render("bibles/index", {
-//             title: "Genesis",
-//             user: req.user,
-//             book: response.data,
-//             chapter: bible.chapter,
-//             bibleId: bible._id,
-//           });
-//         }
-//     })
-// }
+ function show(req, res) {
+    axios
+    .get(`https://raw.githubusercontent.com/aruljohn/Bible-kjv/master/${req.params.id}.json`)
+    .then((response) =>{
+        console.log(response)
+        res.render('bibles/index', {title: `${req.params.id}`, user: req.user, results: response.data})
+    })
+ }   
+      
+
   
 //   function search(req, res) {
 //     axios
