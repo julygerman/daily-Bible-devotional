@@ -36,7 +36,7 @@
             <a class="nav-link" href="/auth/logout" tabindex="-1" aria-disabled="true">Log Out</a>
           </li>
           <li class="nav-item">
-            <img id="avatarPhoto" height="50" src="#" alt="">
+            <img id="avatarPhoto" height="50" src="<%= user.avatar %>" alt="">
           </li>
       </ul>
     <% } else { %>
@@ -44,7 +44,7 @@
         <a class="nav-link" href="/auth/google">Login with Google</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"></a>
+        <a class="nav-link" href="/bibles/index">Bible</a>
       </li>
     <% } %>
 

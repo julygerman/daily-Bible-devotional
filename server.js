@@ -17,9 +17,11 @@ require('./config/database');
 require('./config/passport');
 
 // require our routes
+const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const biblesRouter = require('./routes/bibles')
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +43,8 @@ app.use(passport.session());
 
 // mount all routes with appropriate base paths
 
-app.use('/', usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 app.use('/auth', authRouter)
 app.use('/bibles', biblesRouter)
 

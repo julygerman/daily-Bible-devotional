@@ -51,11 +51,6 @@ function update(req, res) {
 }
 
 function showProfile(req, res) {
-  // Let's talk about why we're using User.findById.
-  // Ordinarily, you won't see this, as we have access
-  // to the user via req.user.  Because we're going to 
-  // use .populate later on to find "friends," we're 
-  // going to stub it up like this in advance.
   User.findById(req.user._id).populate('friends').then((user) => {
       res.render('users/profile', { title: 'Profile Page', user})
     }
