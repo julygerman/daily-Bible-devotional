@@ -6,10 +6,14 @@
       <%prayer.forEach(pray => { %>
         <form action="/prayers/<%= pray.prayer %>?_method=DELETE" method="POST" class="delete-form"> 
           <button type="submit">Delete</button> 
-          <a href="/prayers/<%= prayer.id %> " class="list-group-item list-group-item-action"> 
-            <%= pray.prayer %>: <%= pray.done ? 'Answered' : 'Not Answered Yet' %></a>
-          <% console.log('THIS IS YOUR ', prayer) %> 
-          <% }) %> 
+          <ul>
+            <li>
+              <a href="/prayers/<%= prayer.id %> " class="list-group-item list-group-item-action"> 
+                <%= pray.id %>: <%= pray.done ? 'Answered' : 'Not Answered Yet' %></a>
+              <% console.log('THIS IS YOUR ', prayer) %> 
+              <% }) %> 
+            </li>
+          </ul>
           </div>
         </form>   
        <a href="/prayers/new" type="submit" class="btn btn-primary" name="prayer">Add New Prayer</a>

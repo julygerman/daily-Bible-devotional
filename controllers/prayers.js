@@ -34,12 +34,11 @@ function deletePrayer(req, res) {
 }
 
 function create(req, res) {
+    console.log('******ROUTE IS WORKING******')
     Prayer.create(req.body)
-    console.log('THIS IS YOU DATA', req.body)
     .then((prayer)=>{
     res.redirect('/prayers', {title: 'Prayer', user: req.user, prayer})
-    
- })
+        })
 }
 
 function newPrayer(req, res){
