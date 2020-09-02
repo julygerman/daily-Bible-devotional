@@ -1,32 +1,22 @@
 <%- include('../partials/header') %>
 
 <h1>Prayer Requests</h1>
-<%# prayers.forEach(function(p) { %>
-    <!--<ul>
-      <li>
-        <!-- <form action="/prayers/<%#= p.id %>?_method=DELETE" method="POST" class="delete-form"> -->
-          <!-- <button type="submit">Delete</button> -->
-        <!-- </form>   -->
-          <!-- <a href="/prayers<%#= p.id %>"><%#= p.prayer %></a>
-            - 
-          <%#= p.done ? 'Answered' : 'Not Answered Yet' %>
-      </li>
-    </ul>
-<%# }); %>
-        <form action="/prayers" method="POST">
-          <input type="text" name="prayer">
-          <button type="submit">Add Prayer</button>
-        </form>       -->
-     
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action"></a>
-        </div>
-      <form action="#"></form>
+    
+    <div class="list-group">
+      <%prayer.forEach(pray => { %>
+        <form action="/prayers/<%= pray.prayer %>?_method=DELETE" method="POST" class="delete-form"> 
+          <a href="prayers/show" class="list-group-item list-group-item-action"> <%= pray.prayer %>: <%= pray.done ? 'Answered' : 'Not Answered Yet' %></a>
+          <button type="submit">Delete</button> 
+          <% console.log('THIS IS YOUR ', prayer) %> 
+          <% }) %> 
+          </div>
+        </form>   
+      <form action="/prayers" method="POST"></form>
         <div class="form-group">
           <label for="exampleInputPassword1">Add Prayer</label>
-          <input type="text" class="form-control" id="exampleInputPassword1">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="type here...">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" name="prayer">Submit</button>
       </form>
 
 

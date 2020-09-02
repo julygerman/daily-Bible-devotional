@@ -28,17 +28,16 @@ function edit(req, res) {
 function deletePrayer(req, res) {
     Prayer.findByIdAndDelete(req.params.id)
     .then(()=>{
-        res.redirect('prayers/index')
+        res.redirect('/prayers')
 
     })
 }
 
 function create(req, res) {
-    console.log(req.body)
     Prayer.create(req.body)
     .then((prayer)=>{
-        res.redirect('prayers/index', {title: 'Prayer'})
-    })
+    res.render('/prayers', {title: 'Prayer', user: req.user, prayer})
+        })
 }
 
 function newPrayer(req, res){
@@ -48,13 +47,14 @@ function newPrayer(req, res){
 function show(req, res) {
     Prayer.findOne(req.params.id)
     .then((prayer)=>{
-        res.render('prayers/show', {title: 'Prayer List', user: req.user, prayer})
+        res.render('prayers/show', {title: 'Prayer', user: req.user, prayer})
     })
 }
 
 function index(req, res) {
     Prayer.find({})
     .then((prayer)=>{
-        res.render('prayers/index', {title: 'Prayer List', user: req.user, prayer})
+        res.render('prayers/index', {title: 'Prayer', user: req.user, prayer})
     })
 }
+
