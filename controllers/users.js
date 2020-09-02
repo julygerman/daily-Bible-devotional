@@ -31,7 +31,12 @@ function removeFriend(req, res) {
 }
 
 function show(req, res) {
-  
+  User.findById(req.params.id).then((userInfo) => {
+      res.render('users/show', {
+        userInfo,
+        user: req.user
+    })
+  })
 }
 
 function update(req, res) {
