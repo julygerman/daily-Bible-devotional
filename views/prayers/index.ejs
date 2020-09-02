@@ -2,28 +2,21 @@
 
 <h1>Prayer Requests</h1>
     <ul>
-      <% prayers.forEach(function(p) { %>
-        <li>
-          <form action="/prayers/<%= p.id %>?_method=DELETE" method="POST" class="delete-form">
-            <button type="submit">Delete</button>
-          </form>  
-          <a href="/prayers<%= p.id %>"><%= p.prayer %></a>
+      <%# if (prayers){ %>
+
+        <%# prayers.forEach(function(p) { %>
+          <li>
+            <form action="/prayers/<%#= p.id %>?_method=DELETE" method="POST" class="delete-form">
+              <button type="submit">Delete</button>
+            </form>  
+            <a href="/prayers<%#= p.id %>"><%#= p.prayer %></a>
             - 
-          <%= p.done ? 'Answered' : 'Not Answered Yet' %>
-        </li>
-      <% }); %>
-    </ul>
-    <a href="/prayers">Add Prayer</a>
-
-
-    <h1>Edit Prayer</h1>
-    <form action="/prayers<%= Prayer.id %>?_method=PUT" method="POST">
-        <input type="text" value="<%= Prayer.Prayer%>" name="prayer">
-        <input type="checkbox" name="done" <%= Prayer.done ? 'checked' : ''%>>
-        <button type="submit">Save Prayer</button>
-    </form>
-
-
+            <%#= p.done ? 'Answered' : 'Not Answered Yet' %>
+          </li>
+          <%# }); %>
+        </ul>
+        <a href="/prayers/new">Add Prayer</a>        
+      <%# } %> 
 
 
 

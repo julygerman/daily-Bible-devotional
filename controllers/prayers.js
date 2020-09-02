@@ -14,13 +14,13 @@ function update(req, res) {
     req.body.id = parseInt(req.params.id)
     req.body.done = req.body.done === 'on'
     Prayer.update(req.params.id, req.body)
-    res.redirect('/prayers')
+    res.redirect('prayers/index')
 }
 
 function edit(req, res) {
     Prayer.findByIdAndUpdate(req.params.id)
     .then((prayer)=>{
-        res.render('/prayers', {title: 'Prayer List', user: req.user, prayer})
+        res.render('prayers/index', {title: 'Prayer List', user: req.user, prayer})
 
     })
 
@@ -28,7 +28,7 @@ function edit(req, res) {
 function deletePrayer(req, res) {
     Prayer.findByIdAndDelete(req.params.id)
     .then(()=>{
-        res.redirect('/prayers')
+        res.redirect('prayers/index')
 
     })
 }
@@ -36,11 +36,11 @@ function deletePrayer(req, res) {
 function create(req, res) {
     console.log(req.body)
     Prayer.create(req.body)
-    res.redirect('/prayers')
+    res.redirect('prayers/index')
 }
 
 function newPrayer(req, res){
-    res.render('prayers')
+    res.render('prayers/index')
 }
 
 function show(req, res) {
@@ -53,6 +53,6 @@ function show(req, res) {
 function index(req, res) {
     Prayer.find({})
     .then((prayer)=>{
-        res.render('/prayers', {title: 'Prayer List', user: req.user, prayer})
+        res.render('prayers/index', {title: 'Prayer List', user: req.user, prayer})
     })
 }

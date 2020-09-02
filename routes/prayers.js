@@ -2,9 +2,9 @@ var router = require('express').Router();
 var prayersCtrl = require('../controllers/prayers');
 
 router.get('/', isLoggedIn, prayersCtrl.index)
-router.get('/new', isLoggedIn, prayersCtrl.new)
+router.get('/', isLoggedIn, prayersCtrl.new)
 router.get('/:id', isLoggedIn, prayersCtrl.show)
-router.get('/:id/edit', isLoggedIn, prayersCtrl.edit)
+router.get('/:id', isLoggedIn, prayersCtrl.edit)
 router.post('/', isLoggedIn, prayersCtrl.create)
 router.delete('/:id', isLoggedIn, prayersCtrl.delete)
 router.put('/:id', isLoggedIn, prayersCtrl.update)
