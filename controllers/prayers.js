@@ -35,9 +35,12 @@ function deletePrayer(req, res) {
 
 function create(req, res) {
     console.log('******ROUTE IS WORKING******')
+    req.body.done = false
+    req.body.postedBy = req.user.name
     Prayer.create(req.body)
     .then((prayer)=>{
-    res.redirect('/prayers', {title: 'Prayer', user: req.user, prayer})
+        console.log('ello', prayer)
+    res.redirect('/prayers')
         })
 }
 

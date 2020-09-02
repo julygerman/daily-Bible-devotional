@@ -1,11 +1,7 @@
 var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const prayerListSchema = new Schema({
-  List: String,
-}, {
-  timestamps: true
-})
+
 
 const userSchema = new mongoose.Schema({
   name: String,
@@ -13,7 +9,6 @@ const userSchema = new mongoose.Schema({
   avatar: String,
   googleId: String,
   friends: [{ type: Schema.Types.ObjectId, ref: 'User'}],
-  prayerList: [prayerListSchema]
 }, {
   timestamps: true
 });

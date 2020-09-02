@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 
 const prayerListSchema = new Schema({
-    List: String,
+    content: String,
+    postedBy: String,
+    done: Boolean
   }, {
     timestamps: true
   })
