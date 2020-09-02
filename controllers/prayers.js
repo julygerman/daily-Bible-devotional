@@ -36,7 +36,9 @@ function deletePrayer(req, res) {
 function create(req, res) {
     console.log(req.body)
     Prayer.create(req.body)
-    res.redirect('prayers/index')
+    .then((prayer)=>{
+        res.redirect('prayers/index', {title: 'Prayer'})
+    })
 }
 
 function newPrayer(req, res){
