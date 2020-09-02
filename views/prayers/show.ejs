@@ -1,10 +1,25 @@
 <%- include('../partials/header') %>
 
-    <h1>Prayer # <%= prayer.id %></h1>
-    <h3><%= prayer.prayer %></h3>
-    <h3>Answered:  <%= prayer.done ? 'Yes' : 'No'%></h3>
+    <h1><%= pray.postedBY %></h1>
+    <h3><%= pray.content%></h3>
+    <h3>Answered:  <%= pray.done ? 'Yes' : 'No'%></h3>
     <a href="/prayers/<%= prayer.id%>">Edit Prayer</a>
 
+
+    <h3><%= title %></h3>
+<h4><%= message.title %></h4>
+<h5>Posted by <%= message.postedBy %> <img id="avatarPhoto" width="30" src="<%= message.avatar %>" alt=""></h5>
+
+<% .replies.forEach(reply => { %>
+    <h6><%= reply.message %> - <%= reply.postedBy %> <img id="avatarPhoto" width="25" src="<%= reply.avatar %>" alt=""></h6>
+<% }) %>
+
+<form action="/messages/<%= message._id %>" method="POST">
+  <div class="form-group">
+    <input type="text" class="form-control" aria-describedby="message" name="message" placeholder="Enter reply...">
+  </div>
+  <button type="submit" class="btn btn-primary">Reply</button>
+</form>
 
 
     <%- include('../partials/footer') %>

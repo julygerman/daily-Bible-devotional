@@ -2,10 +2,19 @@ var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
+const replySchema = new Schema({
+    postedBy: String,
+    avatar: String,
+    message: String,
+  });
+
+
 const prayerListSchema = new Schema({
     content: String,
+    avatar: String,
     postedBy: String,
-    done: Boolean
+    done: Boolean,
+    replies: [replySchema]
   }, {
     timestamps: true
   })

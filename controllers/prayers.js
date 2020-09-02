@@ -1,4 +1,6 @@
 const Prayer = require('../models/prayer');
+const { use } = require('passport');
+const user = require('../models/user');
 
 module.exports = {
     index,
@@ -34,7 +36,7 @@ function deletePrayer(req, res) {
 }
 
 function create(req, res) {
-    console.log('******ROUTE IS WORKING******')
+
     req.body.done = false
     req.body.postedBy = req.user.name
     Prayer.create(req.body)
@@ -49,6 +51,7 @@ function newPrayer(req, res){
 }
 
 function show(req, res) {
+    console.log('******ROUTE IS WORKING******')
     Prayer.findOne(req.params.id)
     .then((prayer)=>{
         res.render('prayers/show', {title: 'Prayer', user: req.user, prayer})
