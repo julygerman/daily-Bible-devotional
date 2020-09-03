@@ -2,19 +2,21 @@
 
 <h1>Prayer Requests</h1>
     
-    <div class="list-group">
-      <ul>
+<div id="prayerCard" class="card" style="width: 100rem;">
+  <div class="card-body">
+      
       <%prayer.forEach(pray => { %>
         <form action="/prayers/<%= pray._id %>?_method=DELETE" method="POST" class="delete-form"> 
-          <button type="submit">Delete</button> 
-            <li>
-              <a href="/prayers/<%= pray._id %> " class="list-group-item list-group-item-action"> 
-                Posted by: <%= pray.postedBy %>  <%= pray.content %>: <%= pray.done ? 'Answered' : 'Not Answered Yet' %></a>
-              </li>
+          
+            <a href="/prayers/<%= pray._id %>/show " class="list-group-item list-group-item-action"> 
+              Posted by: <%= pray.postedBy %>  <%= pray.content %>: <%= pray.done ? 'Answered' : 'Not Answered Yet' %></a>
+              <button type="submit" class="btn btn-danger">Delete</button> 
+              
               </form>   
               <% }) %> 
-          </ul>
+        
           <a href="/prayers/new" type="submit" class="btn btn-primary" name="prayer">Add New Prayer</a>
+      </div>
       </div>
 
 
