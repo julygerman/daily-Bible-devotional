@@ -1,31 +1,32 @@
 <%- include('../partials/header') %>
 
-<h3>Users</h3>
-
-<div class="card" style="width: 18rem;">
+<div class="jumbotron" style="text-align: center; background-image: url(https://source.unsplash.com/random/1840x1440); border-end-end-radius: 50%; margin: 100px; margin-top: 25px;">
   <!-- If our user doesn't have an avatar image, let's use a silly cat picture! -->
-  <img id="avatarPhoto" style="height: 18rem;" class="card-img-top" src="<%= userInfo.avatar ? userInfo.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
   <div class="card-header">
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= userInfo.name %></h5>
-    <p><%= userInfo.bio %></p>
-    <!-- Let's clean up the date data to show the day the user joined -->
-    <p class="card-text">Joined: <%= userInfo.createdAt.toLocaleString() %></p>
-    <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
-    <!--<p class="card-text">Favorite Verses:</p>
-    <!-- This is where we'll iterate over the favorite verses with a forEach -->
-    <%# verses.forEach(verse => { %>
-      <!--<a href="/bible/<%#=  %>"><%#=  %></a><br>
-    <%# }) %><br>
-    <!-- This is where we'll render buttons to add/remove a user as a friend -->
-    <% if (!userInfo._id.equals(user._id) && !user.friends.includes(userInfo._id)) { %>
-      <a href="/users/<%= userInfo._id %>/friend" class="btn btn-primary">Add Friend</a>
-    <% } %>
-    <% if (!userInfo._id.equals(user._id) && user.friends.includes(userInfo._id)) { %>
-      <a href="/users/<%= userInfo._id %>/unfriend" class="btn btn-primary">Remove Friend</a>
-    <% } %>
-  </div>
-</div>
+      <div class="card-body" style="font-size: 18px; text-align: center; padding: -120px; background-color: rgba(0, 0, 0, .6); color: seashell;" >
+        <img id="avatarPhoto" style="height: 200px; width: 200px; position: relative; display: block; margin-left: auto; margin-right: auto; top: 100px ; border-color: seashell;" class="card-img-top" src="<%= userInfo.avatar ? userInfo.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
+        <div style="padding-top: 110px;">
+            <h2><%= userInfo.name %></h2>
+            <p><%= userInfo.bio %></p>
+            <!-- Let's clean up the date data to show the day the user joined -->
+            <p class="card-text">Joined: <%= userInfo.createdAt.toLocaleString() %></p>
+            <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
+            <% if (!userInfo._id.equals(user._id) && !user.friends.includes(userInfo._id)) { %>
+                <a href="/users/<%= userInfo._id %>/friend" class="btn btn-primary">Add Friend</a>
+                <% } %>
+                <% if (!userInfo._id.equals(user._id) && user.friends.includes(userInfo._id)) { %>
+                    <a href="/users/<%= userInfo._id %>/unfriend" class="btn btn-primary">Remove Friend</a>
+                    <% } %>
 
-<%- include('../partials/footer') %>
+                </div>
+          <!--<p class="card-text">Favorite Verses:</p>
+            <!-- This is where we'll iterate over the favorite verses with a forEach -->
+            <%# verses.forEach(verse => { %>
+                <!--<a href="/bible/<%#=  %>"><%#=  %></a><br>
+                    <%# }) %><br>
+                    <!-- This is where we'll render buttons to add/remove a user as a friend -->
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <%- include('../partials/footer') %>
