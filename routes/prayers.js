@@ -4,10 +4,11 @@ var prayersCtrl = require('../controllers/prayers');
 router.get('/', isLoggedIn, prayersCtrl.index)
 router.get('/new', isLoggedIn, prayersCtrl.new)
 router.get('/:id/show', isLoggedIn, prayersCtrl.show)
-router.get('/:id', isLoggedIn, prayersCtrl.edit)
+router.post('/:id/replies', isLoggedIn, prayersCtrl.reply)
 router.post('/', isLoggedIn, prayersCtrl.create)
 router.delete('/:id', isLoggedIn, prayersCtrl.delete)
 router.put('/:id', isLoggedIn, prayersCtrl.update)
+router.get('/:id', isLoggedIn, prayersCtrl.edit)
 
 
 function isLoggedIn(req, res, next) {

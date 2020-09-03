@@ -9,8 +9,22 @@ module.exports = {
     create,
     delete: deletePrayer,
     edit,
-    update
+    update,
+    reply
 }
+
+function reply(req, res) {
+    req.body.postedBy = req.user.name
+    req.body.avatar = req.user.avatar
+    Prayer.findById(req.params.id)
+    .then((prayer) => {
+      prayer.replies.push(req.body)
+      prayer.save()
+      .then( ()=> {
+        res.redirect(`/prayers/${req.params.id}/show`)
+      })
+    })
+  }
 
 function update(req, res) {
     req.body.id = parseInt(req.params.id)
@@ -52,7 +66,7 @@ function newPrayer(req, res){
 
 function show(req, res) {
     console.log('******ROUTE IS WORKING******')
-    Prayer.findOne(req.params.id)
+    Prayer.findById(req.params.id)
     .then((prayer)=>{
         res.render('prayers/show', {title: 'Prayer', user: req.user, prayer})
     })

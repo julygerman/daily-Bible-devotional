@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1>Prayer Requests</h1>
+<h1 style="text-align: center; background-color: rgba(100, 100, 100, .5); padding: 50px;">Prayer Requests</h1>
     
 <div id="prayerCard" class="card" style="width: 100rem;">
   <div class="card-body">
@@ -9,8 +9,9 @@
         <form action="/prayers/<%= pray._id %>?_method=DELETE" method="POST" class="delete-form"> 
           
             <a href="/prayers/<%= pray._id %>/show " class="list-group-item list-group-item-action"> 
-              Posted by: <%= pray.postedBy %>  <%= pray.content %>: <%= pray.done ? 'Answered' : 'Not Answered Yet' %></a>
-              <button type="submit" class="btn btn-danger">Delete</button> 
+              Posted by: <%= pray.postedBy %>  <%= pray.content %> 
+              <!-- <%#= pray.done ? 'Answered' : 'Not Answered Yet' %></a> -->
+              <button type="submit" class="btn btn-danger" style="margin: 10px;">Delete</button> 
               
               </form>   
               <% }) %> 
