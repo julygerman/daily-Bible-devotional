@@ -9,6 +9,7 @@
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= userInfo.name %></h5>
+    <p><%= userInfo.bio %></p>
     <!-- Let's clean up the date data to show the day the user joined -->
     <p class="card-text">Joined: <%= userInfo.createdAt.toLocaleString() %></p>
     <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
