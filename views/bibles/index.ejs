@@ -84,22 +84,21 @@
           </div>
         </nav>
       </nav>
-      <h2><%=  results.book %></h2>
       
       
-      <div data-spy="scroll" data-target="#navbar-example3" data-offset="0"></div>
-      <% if (results){%>
-    <Table>
-      <tr>
-  <% results.chapters.forEach((chapter, idx) =>{ %>
-    <h4>Chapter <%= idx + 1 %> </h4>
-  <% chapter.verses.forEach((verse, id) => { %> 
-    <p><%= id + 1 %>. <%= verse.text %></p>
-  <% }); %> 
-<% }) %>
-<% } %> 
-      </tr>
-  </Table>
+  <div class="jumbotron jumbotron-fluid">
+  <% if (results){%>
+    <div class="container">
+      <h2 class="display-4"><%=  results.book %></h2>
+    <% results.chapters.forEach((chapter, idx) =>{ %>
+      <h4>Chapter <%= idx + 1 %> </h4>
+    <% chapter.verses.forEach((verse, id) => { %> 
+      <p class="lead"><%= id + 1 %>. <%= verse.text %></p>
+      <% }); %> 
+    <% }) %>
+  <% } %> 
+    </div>
+  </div>  
     
 
     <%- include('../partials/footer') %>
