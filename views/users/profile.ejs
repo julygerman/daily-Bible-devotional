@@ -1,22 +1,35 @@
 <%- include('../partials/header') %>
 
-<h3></h3>
+<div class="jumbotron" style="text-align: center; background-image: url(https://source.unsplash.com/random/1840x1440); border-end-end-radius: 50%; margin: 100px; margin-top: 25px;">
+    <!-- If our user doesn't have an avatar image, let's use a silly cat picture! -->
+    <div class="card-header">
+        <div class="card-body" style="font-size: 18px; text-align: center; padding: -120px; background-color: rgba(0, 0, 0, .6); color: seashell;" >
+          <img id="avatarPhoto" style="height: 200px; width: 200px; position: relative; display: block; margin-left: auto; margin-right: auto; top: 100px ; border-color: seashell;" class="card-img-top" src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
+          <div style="padding-top: 110px;">
+              <h2><%= user.name %></h2>
+              <p><%= user.bio %></p>
 
-<div class="card" style="width: 50rem; color: black;">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="profileinfo-tab" data-toggle="tab" href="#profileinfo" role="tab" aria-controls="profileinfo" aria-selected="true">My Info</a>
-      </li>
-      <!-- This is the info for the 'update' tab -->
-      <li class="nav-item">
-        <a class="nav-link" id="updateinfo-tab" data-toggle="tab" href="#updateinfo" role="tab" aria-controls="updateinfo" aria-selected="false">Update Info</a>
-      </li>
-      <!-- This is the info for the 'friends' tab -->
-      <li class="nav-item">
-        <a class="nav-link" id="friends-tab" data-toggle="tab" href="#friends" role="tab" aria-controls="friends" aria-selected="false">Friends</a>
-      </li>
+  
+                  </div>
+
+<div class="card" style="width: 50rem; color: black; background-color: rgba(0, 0, 0, .3); color: seashell;">
+    <ul class="nav nav-pills nav-fill" style="width: 50rem;">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="width: 50rem;">
+            <li class="nav-item">
+                <a class="nav-link active" id="profileinfo-tab" data-toggle="tab" href="#profileinfo" role="tab" aria-controls="profileinfo" aria-selected="true" style="color: seashell;">My Info</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" id="updateinfo-tab" data-toggle="tab" href="#updateinfo" role="tab" aria-controls="updateinfo" aria-selected="false" style="color: seashell;">Update Info</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" id="friends-tab" data-toggle="tab" href="#friends" role="tab" aria-controls="friends" aria-selected="false" style="color: seashell;">Friends</a>
+            </li>
+        </ul>
     </ul>
-    <div class="tab-content" id="myTabContent">
+        <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="profileinfo" role="tabpanel" aria-labelledby="profileinfo-tab">
         <div class="card-body">
           <h5 class="card-title">Name: <%= user.name %></h5>
@@ -46,17 +59,12 @@
         </div>
       </div>
       <!-- This is the card for the 'friends' tab -->
-      <div class="tab-pane fade" id="friends" role="tabpanel" aria-labelledby="friends-tab">
+      <div class="tab-pane fade" id="friends" role="tabpanel" aria-labelledby="friends-tab" style="color: seashell;">
         <div class="card-body">
         <!-- This is where we'll use a forEach to display friends -->
         <% user.friends.forEach(f => { %>
-          <a href="/users/<%= f._id %>"><img width="30" id="avatarPhoto" src="<%= f.avatar %>" alt=""><%= f.name %></a><br><br>
+          <a href="/users/<%= f._id %>"><img width="30" id="avatarPhoto" src="<%= f.avatar %>" alt="" ><%= f.name %></a><br><br>
         <% }) %>
-        </div>
-      </div>
-      <!-- This is the card for the 'prayerlist' tab -->
-      <div class="tab-pane fade show" id="prayerlist" role="tabpanel" aria-labelledby="prayerlist-tab">
-        <div class="card-body">
         </div>
       </div>
     </div>

@@ -1,21 +1,20 @@
 <%- include('../partials/header') %>
 
-<h1 style="text-align: center; background-color: rgba(100, 100, 100, .5); padding: 50px;">Prayer Requests</h1>
+<h1 style="text-align: center; background-color: rgba(100, 100, 100, .5); padding: 50px;">Prayer | Discussion Board</h1>
     
 <div id="prayerCard" class="card" style="width: 100rem;">
   <div class="card-body">
       
       <%prayer.forEach(pray => { %>
+        <a href="/prayers/<%= pray._id %>/show " class="list-group-item list-group-item-action"> 
+          <h4><%= pray.content %> </h4>
+          Posted by: <%= pray.postedBy %>  
         <form action="/prayers/<%= pray._id %>?_method=DELETE" method="POST" class="delete-form"> 
-          
-            <a href="/prayers/<%= pray._id %>/show " class="list-group-item list-group-item-action"> 
-              Posted by: <%= pray.postedBy %>  <%= pray.content %> 
-              <!-- <%#= pray.done ? 'Answered' : 'Not Answered Yet' %></a> -->
               <button type="submit" class="btn btn-danger" style="margin: 10px;">Delete</button> 
               
               </form>   
+              
               <% }) %> 
-        
           <a href="/prayers/new" type="submit" class="btn btn-primary" name="prayer">Add New Prayer</a>
       </div>
       </div>
