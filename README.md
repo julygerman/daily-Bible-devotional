@@ -13,7 +13,7 @@ My motivation for creating this app is based on my faith and ministry as a youth
 - AAU I should be able view the passage of the day
 - AAU I should only be able to access the bible if not logged in
 - AAU I should be able to post my comments on a public feed
-- AAU comment on other users posts
+- AAU I should be able to comment on other users posts
 
 ## Wireframes
 ![wireframe1](/Pictures/Bible%20App%20Screenshot-1.jpg)
