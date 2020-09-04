@@ -11,7 +11,7 @@ My motivation for creating this app is based on my faith and ministry as a youth
 ## User Experience:
 - AAU I should be able to log in/ log out
 - AAU I should be able view the passage of the day
-- AAU I should only be able to access the bible in not logged in
+- AAU I should only be able to access the bible if not logged in
 - AAU I would like to see a different daily verse
 - AAU I should be able to post my comments on a public feed
 - AAU comment on other users posts
