@@ -1,9 +1,6 @@
 # Morning Logos
 ### Description: 
 This is an app created for the intentions to read the word of God and share prayer request with fellow believers. It aslo gives the user an oppurtunity to discuss with other users their thoughts on what they have read.
- 
-![goofy batman](Pictures/Batmannanananananananananananan.jpg)
-
 
 ## Motivation:
 My motivation for creating this app is based on my faith and ministry as a youth pastor. I hope that I can improve on this and use it as a legitamite tool to help myself and my students grow in their faith.
@@ -19,41 +16,59 @@ My motivation for creating this app is based on my faith and ministry as a youth
 - AAU I should be able to post my comments on a public feed
 - AAU comment on other users posts
 
-https://supeeerrr-trivia.surge.sh
 ## Wireframes
+![wireframe1](/Pictures/Bible%20App%20Screenshot-1.jpg)
+![wireframe1](/Pictures/Bible%20App%20Screenshot-2.jpg)
+![wireframe1](/Pictures//Bible%20App%20Screenshot-3.jpg)
+
+## Trello Board
+![trelloboard](/Pictures/Trello%20Board%20Screen%20Shot.jpg)
+
+
 
 ## Screenshots:
-
+![web-app-sc](/Pictures/Morning-Logos-home.jpg)
+![web-app-sc](/Pictures/Morning-Logos-bible.jpg)
+![web-app-sc](/Pictures/Morning-Logos-users.jpg)
+![web-app-sc](/Pictures/Morning-Logos-profile.jpg)
 
 ## Technology Used:
 - Html
 - Css
 - JS
 - Google Fonts
-## Psuedo Code
-- I need to create a board layout 5 X 6
-- each answer button needs to have an event clicker
-- the game needs to be able to keep score
-- the game needs to generate multiple choice questions per question
-- the player will lose a life if they answer incorrectly
-- if the player wins or loses the board needs to stop being clickable
-- the reset button nets to initialize a game reset 
+- NodeJS
+- ExpressJS
+- Express Generator
+- MongoDB
+- MongooseJS
+- MongoDB Atlas
+- EJS Templating
+- Heroku with NodeJS
+- Fetch in JS
+- Postman API Development
+- Google OAuth 2.0
+- PassportJS 
+- bootstrap
+- animate.css
+
 ## Stretch Goals:
-- Add more questions to the game
-- Randomize the questions and answers per play through
-- Improve css
-- Add difficulty choices
+- AAU I should be able to favorite the daily or any passage
+- AAU I should be able to embed my comments to the daily passage
+- AAU should be able to share to social media
+- AAU I should be able to share any comments to other users
+- AAU I should be able to like posts
 
 
 
 ## Credit:
 I would like to thank each and every person that was involved in helping me create this especially my instructors Ben, David and Shahzad. I would also like to give credit to the wonderful people and their creations:
 
-- BSacco0674 - Inspiration for the Game
-- seanmorrissey96 - https://freesound.org/people/seanmorrissey96/
-- Jim Carrey Online(Audio Files) - http://www.jimcarreyonline.com
-- tommccann - https://freesound.org/people/tommccann/
+- Random Wallpaper Api : https://source.unsplash.com/
+- Background Patterns : https://www.heropatterns.com/
+- Arul John : Bible Github @ https://github.com/aruljohn
+- Ben Manley : GameGoose @ https://github.com/ManliestBen
 
-This game uses material from the “The Riddler/Quotes” article on the Arkham City wiki at Fandom and is licensed under the Creative Commons Attribution-Share Alike License.
+
 
 
