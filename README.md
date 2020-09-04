@@ -67,6 +67,7 @@ I would like to thank each and every person that was involved in helping me crea
 - Background Patterns : https://www.heropatterns.com/
 - Arul John : Bible Github @ https://github.com/aruljohn
 - Ben Manley : GameGoose @ https://github.com/ManliestBen
+- Flaticon : Icons made by https://www.flaticon.com/authors/freepik
 
 
 
