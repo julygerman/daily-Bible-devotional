@@ -1,6 +1,6 @@
 # Morning Logos
 ### Description: 
-This is an app created for the intentions to read the word of God and share prayer request with fellow believers. It aslo gives the user an oppurtunity to discuss with other users their thoughts on what they have read.
+This is an app created for the intentions to read the word of God and share prayer request with fellow users. It aslo gives the user an oppurtunity to discuss with others their thoughts on what they have read.
 
 ## Motivation:
 My motivation for creating this app is based on my faith and ministry as a youth pastor. I hope that I can improve on this and use it as a legitamite tool to help myself and my students grow in their faith.
