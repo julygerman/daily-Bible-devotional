@@ -1,18 +1,34 @@
 <%- include('../partials/header') %>
 
-<%= prayer.content %> 
-<h5>Posted on <%= prayer.createdAt.toLocaleString() %> - <%= prayer.postedBy %> <img id="avatarPhoto" width="30" src="<%= user.avatar %>" alt=""></h5>
-  <div class="jumbotron" style="text-align:left; border-end-end-radius: 50%; margin: 100px; margin-top: 25px; background-color: rgba(0, 0, 0, .6);">
+<div class="jumbotron" style="text-align:left; border-end-end-radius: 50%; margin: 100px; margin-top: 25px; background-color: rgba(0, 0, 0, .6);">
+    <img id="avatarPhoto" width="45" src="<%= user.avatar %>" alt=""> - <%= prayer.postedBy %> 
+    <h5>
+        <%= prayer.content %> 
+    </h5>
+    <p>Posted on <%= prayer.createdAt.toLocaleString() %> 
+    </p>
       <% prayer.replies.forEach(reply => { %>
-          <h6 style=""><%= reply.message %> - <%= reply.postedBy %> <img id="avatarPhoto" width="25" src="<%= reply.avatar %>" alt=""></h6>
+
+        <div class="media">
+        <img id="avatarPhoto" width="30" src="<%= reply.avatar %>" alt="" style="position: relative; bottom: 12px; border-color: seashell; margin: 10px;"> 
+        <%= reply.postedBy %>
+        <h5 class="mt-0">
+            -
+            <%= reply.message %>
+
+        </h5>
+        <div class="media-body">
+        </div>
+      </div>
       <% }) %>
+      <form action="/prayers/<%= prayer._id %>/replies" method="POST" style="top: 400px; text-align: center; margin: 10px 0px 20px;
+          display: block;" >
+          <div class="form-group">
+            <input type="text" class="form-control" aria-describedby="message" name="message" placeholder="Enter reply...">
+          </div>
+          <button type="submit" class="btn btn-primary">Reply</button>
+        </form>
 
   </div>      
-<form action="/prayers/<%= prayer._id %>/replies" method="POST">
-    <div class="form-group">
-      <input type="text" class="form-control" aria-describedby="message" name="message" placeholder="Enter reply...">
-    </div>
-    <button type="submit" class="btn btn-primary">Reply</button>
-  </form>
 
     <%- include('../partials/footer') %>
