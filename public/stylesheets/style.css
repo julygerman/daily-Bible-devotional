@@ -45,6 +45,22 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   border-color: indigo;
 }
 
+h1{
+  font-family: 'Habibi', serif;
+}
+
+p{
+  font-family: 'Habibi', serif;
+}
+
+h3{
+  font-family: 'Habibi', serif;
+}
+
+h2{
+  font-family: 'Habibi', serif;
+}
+
 
 
 @media screen and (max-width: 320px) {

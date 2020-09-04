@@ -20,7 +20,7 @@ My motivation for creating this app is based on my faith and ministry as a youth
 ![wireframe1](/Pictures/Bible%20App%20Screenshot-2.jpg)
 ![wireframe1](/Pictures//Bible%20App%20Screenshot-3.jpg)
 
-## Trello Board
+## Trello Board 
 ![trelloboard](/Pictures/Trello%20Board%20Screen%20Shot.jpg)
 
 
