@@ -4,7 +4,7 @@
     <!-- If our user doesn't have an avatar image, let's use a silly cat picture! -->
     <div class="card-header">
         <div class="card-body" style="font-size: 18px; text-align: center; padding: -120px; background-color: rgba(0, 0, 0, .6); color: seashell;" >
-          <img id="avatarPhoto" style="height: 200px; width: 200px; position: relative; display: block; margin-left: auto; margin-right: auto; top: 100px ; border-color: seashell;" class="card-img-top" src="<%= user.avatar ? user.avatar : 'http://theoldreader.com/kittens/300/300/'  %>" alt="Card image cap">
+          <img id="avatarPhoto" style="height: 200px; width: 200px; position: relative; display: block; margin-left: auto; margin-right: auto; top: 100px ; border-color: seashell;" class="card-img-top" src="<%= user.avatar ? user.avatar : 'https://picsum.photos/seed/picsum/300/300'  %>" alt="Card image cap">
           <div style="padding-top: 110px;">
               <h2><%= user.name %></h2>
               <p><%= user.bio %></p>
