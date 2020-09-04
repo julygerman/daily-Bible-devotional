@@ -13,7 +13,7 @@ module.exports = {
 
 function index(req, res){
     axios
-    .get('https://raw.githubusercontent.com/julygerman/Bible-kjv/master/1Chronicles.json')
+    .get('https://raw.githubusercontent.com/julygerman/Bible-kjv/master/John.json')
     .then((response) =>{
         console.log('this is your data', response.data)
         res.render('bibles/index', {title: 'Daily Scriptures', user: req.user, results: response.data})
