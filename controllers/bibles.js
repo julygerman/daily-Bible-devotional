@@ -13,7 +13,7 @@ module.exports = {
 
 function index(req, res){
     axios
-    .get('https://raw.githubusercontent.com/aruljohn/Bible-kjv/master/1John.json')
+    .get('https://raw.githubusercontent.com/julygerman/Bible-kjv/master/1Chronicles.json')
     .then((response) =>{
         console.log('this is your data', response.data)
         res.render('bibles/index', {title: 'Daily Scriptures', user: req.user, results: response.data})
@@ -22,7 +22,7 @@ function index(req, res){
 
  function show(req, res) {
     axios
-    .get(`https://raw.githubusercontent.com/aruljohn/Bible-kjv/master/${req.params.id}.json`)
+    .get(`https://raw.githubusercontent.com/julygerman/Bible-kjv/master/${req.params.id}.json`)
     .then((response) =>{
         console.log(response)
         res.render('bibles/index', {title: `${req.params.id}`, user: req.user, results: response.data})
