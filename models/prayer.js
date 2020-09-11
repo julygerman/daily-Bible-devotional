@@ -12,7 +12,7 @@ const replySchema = new Schema({
 const prayerListSchema = new Schema({
     content: String,
     avatar: String,
-    postedBy: String,
+    postedBy: { type: Schema.Types.ObjectId, ref: 'User'},
     done: Boolean,
     replies: [replySchema]
   }, {

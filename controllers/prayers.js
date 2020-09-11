@@ -52,7 +52,7 @@ function deletePrayer(req, res) {
 function create(req, res) {
 
     req.body.done = false
-    req.body.postedBy = req.user.name
+    req.body.postedBy = req.user
     Prayer.create(req.body)
     .then((prayer)=>{
         console.log('ello', prayer)
@@ -74,6 +74,7 @@ function show(req, res) {
 
 function index(req, res) {
     Prayer.find({})
+    .populate('postedBy')
     .then((prayer)=>{
         res.render('prayers/index', {title: 'Prayer', user: req.user, prayer})
     })

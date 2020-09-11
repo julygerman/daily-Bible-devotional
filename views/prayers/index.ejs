@@ -8,9 +8,12 @@
       <%prayer.forEach(pray => { %>
         <a href="/prayers/<%= pray._id %>/show " class="list-group-item list-group-item-action"> 
           <h4><%= pray.content %> </h4>
-          Posted by: <%= pray.postedBy %>  
+          Posted by: <%= pray.postedBy.name %>  
         <form action="/prayers/<%= pray._id %>?_method=DELETE" method="POST" class="delete-form"> 
-              <button type="submit" class="btn btn-danger" style="margin: 10px;">Delete</button> 
+          <% if (user._id.equals(pray.postedBy._id)) { %>
+            <button type="submit" class="btn btn-danger" style="margin: 10px;">Delete</button> 
+           
+          <% } %>
               
               </form>   
               
